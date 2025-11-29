@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Menu Builder - Culinary Crest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
+        .nav-link { @apply text-charcoal dark:text-dark-subtle-text text-sm font-medium leading-normal transition-colors hover:text-primary dark:hover:text-primary; }
+        #mobile-menu { display: none; }
+        @media (max-width: 767px) {
+            #mobile-menu:checked ~ .mobile-nav-content {
+                display: flex;
+            }
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b48c2a", 
+                        "background-light": "#f9f9f9",
+                        "background-dark": "#1a1a1a",
+                        "charcoal": "#333333",
+                        "subtle-gray": "#eaeaea",
+                        "dark-text": "#f0f0f0",
+                        "dark-subtle-text": "#a0a0a0",
+                        "dark-border": "#444444",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2a2a2a"
+                    },
+                    fontFamily: { "display": ["Manrope", "sans-serif"] },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-charcoal dark:text-dark-text">
+<div class="relative flex min-h-screen w-full flex-col">
+    <header class="sticky top-0 z-10 w-full border-b border-subtle-gray bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+        <div class="container mx-auto flex items-center justify-between whitespace-nowrap px-4 py-3">
+            <div class="flex items-center gap-4 text-charcoal dark:text-dark-text">
+                <div class="size-6"><svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6_330_menu)"><path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill-rule="evenodd"></path></g><defs><clippath id="clip0_6_330_menu"><rect fill="white" height="48" width="48"></rect></clippath></defs></svg></div>
+                <h2 class="text-xl font-bold leading-tight tracking-[-0.015em]">Culinary Crest</h2>
+            </div>
+            <div class="hidden items-center gap-9 md:flex">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link group relative" href="#">Services <span class="material-symbols-outlined text-sm align-middle">expand_more</span>
+                    <div class="absolute hidden group-hover:block bg-card-light dark:bg-card-dark shadow-xl rounded-lg mt-2 py-2 w-48 z-20 border border-subtle-gray dark:border-dark-border">
+                        <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="services-wedding.html">Weddings</a>
+                        <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="services-corporate.html">Corporate</a>
+                        <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="#">Private Events</a>
+                    </div>
+                </a>
+                <a class="nav-link" href="our-process.html">Process</a>
+                <a class="nav-link font-bold text-primary" href="menu-builder.html">Menu Builder</a>
+                <a class="nav-link" href="gallery.html">Gallery</a>
+                <a class="nav-link" href="venues.html">Venues</a>
+                <a class="nav-link" href="contact.html">Contact Us</a>
+            </div>
+            <a href="contact.html" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-background-dark text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90">
+                <span class="truncate">Inquire Now</span>
+            </a>
+            <div class="md:hidden">
+                <label for="mobile-menu" class="p-2 cursor-pointer">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <input type="checkbox" id="mobile-menu" class="hidden">
+    <div class="mobile-nav-content hidden md:hidden flex-col absolute top-[65px] left-0 w-full bg-card-light dark:bg-card-dark shadow-xl z-40 border-b border-subtle-gray dark:border-dark-border">
+        <a class="block px-6 py-3 nav-link" href="index.html">Home</a>
+        <a class="block px-6 py-3 nav-link" href="services-wedding.html">Weddings</a>
+        <a class="block px-6 py-3 nav-link" href="services-corporate.html">Corporate Events</a>
+        <a class="block px-6 py-3 nav-link" href="our-process.html">Process</a>
+        <a class="block px-6 py-3 nav-link font-bold text-primary" href="menu-builder.html">Menu Builder</a>
+        <a class="block px-6 py-3 nav-link" href="gallery.html">Gallery</a>
+        <a class="block px-6 py-3 nav-link" href="venues.html">Venues</a>
+        <a class="block px-6 py-3 nav-link" href="contact.html">Contact Us</a>
+        <a href="contact.html" class="mx-6 my-4 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity">
+            <span class="truncate">Get a Quote</span>
+        </a>
+    </div>
+
+    <main class="container mx-auto flex flex-1 flex-col px-4 py-12 lg:py-16">
+        <div class="mx-auto max-w-2xl text-center mb-10">
+            <h1 class="text-charcoal dark:text-dark-text text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">Craft Your Perfect Menu</h1>
+            <p class="text-charcoal/80 dark:text-dark-subtle-text mt-3 text-lg font-normal leading-normal">Follow the steps to build and instantly generate a sample menu for your event.</p>
+        </div>
+        
+        <div class="grid flex-1 grid-cols-1 gap-10 lg:grid-cols-5 lg:gap-8">
+            <div class="lg:col-span-3">
+                <div class="flex flex-col gap-3 p-4 mb-8">
+                    <div class="flex items-center justify-between">
+                        <p class="text-base font-medium leading-normal">Step 1 of 3: Cuisine Style</p>
+                        <a class="text-sm font-medium text-primary hover:underline" href="#">Edit Selections</a>
+                    </div>
+                    <div class="h-2 rounded-full bg-subtle-gray dark:bg-dark-border"><div class="h-2 rounded-full bg-primary" style="width: 33%;"></div></div>
+                </div>
+                
+                <section class="mb-12">
+                    <h2 class="text-charcoal dark:text-dark-text text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Select Your Cuisine</h2>
+                    <div class="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6">
+                        <div class="group relative cursor-pointer overflow-hidden rounded-lg ring-4 ring-primary shadow-lg">
+                            <img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiZWXX7vcyOV0VrENmOg7YgNGO6hCz09wm0EUXNkEiEU_uZnu9kTfNoPMeueQKrfYQCioQuCRQWdw5MPSqV_2KxKTNDRDkxYVDIb_qSYwhQrrgNknT6Kjq6AyUI5Wj_4VPs1p3yGl3PC4Gmug0om4wqcsxdSQgkNwvhuGV4H98BS3-_gcB1FxHSQEMXIxVzqA5n_i03kpNPZ8HPTkq5IknHonsB9qWEMsOaA2B4kukqIUmygpKNF9W4zuie9kAnSgp5xuuvufDlAs"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight">Modern European</p>
+                        </div>
+                        <div class="group relative cursor-pointer overflow-hidden rounded-lg ring-1 ring-subtle-gray hover:ring-4 hover:ring-primary dark:ring-dark-border hover:shadow-lg transition">
+                            <img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGb-2VCSR6x9Iq9ZdmQPx0aQFGIas4kf9pa3Ut5teOu3P4U68wsiiYfrF8bO-1ILsx2Y11ee_jTSfuw5hfGXfIuFnYe_4oXuxTqjMXcC2X621QWuQ7clPMk3XRpVWnuWYyBwVbqdhJbvflyZXWXG6DyYlC2wcXhDZb3PkYRPyQX7JGARdYPTeb8Mz9IjiL14qAJgHOQLcT60BajiIg6PpK7fMzwv7LB7XnnZWsFlClpBjYBN3NfYdJvGtKUpYmpkq6vG3Yy3dEM-s"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight">Mediterranean</p>
+                        </div>
+                        <div class="group relative cursor-pointer overflow-hidden rounded-lg ring-1 ring-subtle-gray hover:ring-4 hover:ring-primary dark:ring-dark-border hover:shadow-lg transition">
+                            <img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8KyjYECaoXoBRAhYJRaT9G75mjHXs9cNMhA54TTHnIl-zlZNHatMxw2ev2532tcHkwq0l_HXhlf6E_Msh3vuJLD02_RAp4uLbL7bRXUInxxEJI0e7hrDw2UkJ9CqwcdHzJ2PkwUboVS7K_vEQP1JJHYym6xe9HSAnm2lHiIfjv4CmCtovMkLDfm-dAQGggLq-zaInlP5PQ26KjyU9eLl9da4LoVNtPMUfX6PHHsHPQ9DtJuNtWkeLvl2wrvmO2GLq48UG7MS6v8c"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight">Pan-Asian</p>
+                        </div>
+                        <div class="group relative cursor-pointer overflow-hidden rounded-lg ring-1 ring-subtle-gray hover:ring-4 hover:ring-primary dark:ring-dark-border hover:shadow-lg transition">
+                            <img class="h-full w-full object-cover aspect-[3/4] transition-transform duration-300 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Pm1GbqR1RqKLvfrXNqd76ajzcPzY30_KdBNSeEMuOmNExfCJ2Lx5SgDeokcNXTA51Ag-3i6ErKxVFl_QrDWtfAu3qq12ymQYmTjxEUzKHBJOoehn_0ACmbxyoPhM1kvEft4GWsnFumZdHLj53MSknfOQFsca2enzHvpbZVjLhcfLVOcsLVEBUS9U6paISOFgNlQ6rOYexG4xqpQtbj8SO5pnNwaX4thPnAZcMHOzsZ4URfTxyeiMDYLLGovlPTGk87yerBtfneA"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                            <p class="absolute bottom-4 left-4 text-white text-base font-bold leading-tight">Classic American</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section>
+                    <h2 class="text-charcoal dark:text-dark-text text-2xl font-bold leading-tight tracking-[-0.015em] px-4 pb-4">Specify Dietary Needs (Optional)</h2>
+                    <div class="grid grid-cols-2 gap-4 md:grid-cols-3">
+                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-subtle-gray p-4 transition-colors hover:bg-primary/10 has-[:checked]:border-primary has-[:checked]:bg-primary/10 dark:border-dark-border">
+                            <input class="h-5 w-5 rounded border-subtle-gray bg-transparent text-primary focus:ring-primary dark:border-dark-border" type="checkbox"/>
+                            <span class="font-medium text-charcoal/90 dark:text-dark-text/90">Vegetarian</span>
+                        </label>
+                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-subtle-gray p-4 transition-colors hover:bg-primary/10 has-[:checked]:border-primary has-[:checked]:bg-primary/10 dark:border-dark-border">
+                            <input class="h-5 w-5 rounded border-subtle-gray bg-transparent text-primary focus:ring-primary dark:border-dark-border" type="checkbox"/>
+                            <span class="font-medium text-charcoal/90 dark:text-dark-text/90">Vegan</span>
+                        </label>
+                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-primary p-4 bg-primary/10">
+                            <input checked="" class="h-5 w-5 rounded border-subtle-gray bg-transparent text-primary focus:ring-primary dark:border-dark-border" type="checkbox"/>
+                            <span class="font-medium text-charcoal/90 dark:text-dark-text/90">Gluten-Free</span>
+                        </label>
+                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-subtle-gray p-4 transition-colors hover:bg-primary/10 has-[:checked]:border-primary has-[:checked]:bg-primary/10 dark:border-dark-border">
+                            <input class="h-5 w-5 rounded border-subtle-gray bg-transparent text-primary focus:ring-primary dark:border-dark-border" type="checkbox"/>
+                            <span class="font-medium text-charcoal/90 dark:text-dark-text/90">Dairy-Free</span>
+                        </label>
+                        <label class="flex cursor-pointer items-center gap-3 rounded-lg border border-subtle-gray p-4 transition-colors hover:bg-primary/10 has-[:checked]:border-primary has-[:checked]:bg-primary/10 dark:border-dark-border">
+                            <input class="h-5 w-5 rounded border-subtle-gray bg-transparent text-primary focus:ring-primary dark:border-dark-border" type="checkbox"/>
+                            <span class="font-medium text-charcoal/90 dark:text-dark-text/90">Nut-Free</span>
+                        </label>
+                    </div>
+                </section>
+            </div>
+            
+            <div class="lg:col-span-2">
+                <div class="sticky top-28 rounded-xl bg-card-light dark:bg-card-dark p-8 shadow-2xl border border-subtle-gray dark:border-dark-border">
+                    <h3 class="mb-2 text-2xl font-bold">Your Sample Menu</h3>
+                    <p class="mb-8 text-sm text-charcoal/70 dark:text-dark-subtle-text">This is a live preview based on your selections.</p>
+                    <div class="space-y-6 border-t border-subtle-gray dark:border-dark-border pt-6">
+                        <div class="border-l-4 border-primary pl-4">
+                            <h4 class="mb-1 font-bold text-primary tracking-widest text-xs uppercase">Appetizers</h4>
+                            <p class="font-medium">Modern European Inspired Canapés</p>
+                            <p class="text-sm text-charcoal/70 dark:text-dark-subtle-text">A selection of seasonal bites.</p>
+                        </div>
+                        <div class="border-l-4 border-primary pl-4">
+                            <h4 class="mb-1 font-bold text-primary tracking-widest text-xs uppercase">Main Course</h4>
+                            <p class="font-medium">Pan-Seared Salmon</p>
+                            <p class="text-sm text-charcoal/70 dark:text-dark-subtle-text">Served with asparagus and a lemon-dill sauce.</p>
+                        </div>
+                        <div class="border-l-4 border-primary pl-4">
+                            <h4 class="mb-1 font-bold text-primary tracking-widest text-xs uppercase">Dessert</h4>
+                            <p class="font-medium">Deconstructed Tiramisu</p>
+                            <p class="text-sm text-charcoal/70 dark:text-dark-subtle-text">A modern twist on a classic favorite.</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 border-t border-subtle-gray dark:border-dark-border pt-6">
+                        <p class="text-xs text-charcoal/60 dark:text-dark-subtle-text">*Gluten-Free accommodations available.</p>
+                    </div>
+                    <a href="contact.html" class="mt-8 flex w-full items-center justify-center gap-2 rounded-lg bg-primary py-3 px-6 text-base font-bold text-white transition-opacity hover:opacity-90">
+                        <span class="material-symbols-outlined text-xl">download</span>
+                        Generate & Contact for Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

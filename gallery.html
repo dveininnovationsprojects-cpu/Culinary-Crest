@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Gallery - Culinary Crest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
+        .nav-link { @apply text-charcoal dark:text-dark-subtle-text text-sm font-medium leading-normal transition-colors hover:text-primary dark:hover:text-primary; }
+        #mobile-menu { display: none; }
+        @media (max-width: 767px) {
+            #mobile-menu:checked ~ .mobile-nav-content {
+                display: flex;
+            }
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b48c2a", 
+                        "background-light": "#f9f9f9",
+                        "background-dark": "#1a1a1a",
+                        "charcoal": "#333333",
+                        "subtle-gray": "#eaeaea",
+                        "dark-text": "#f0f0f0",
+                        "dark-subtle-text": "#a0a0a0",
+                        "dark-border": "#444444",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2a2a2a"
+                    },
+                    fontFamily: { "display": ["Manrope", "sans-serif"] },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-charcoal dark:text-dark-text">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+        <div class="flex items-center justify-between whitespace-nowrap border-b border-solid border-subtle-gray dark:border-dark-border px-4 sm:px-6 lg:px-10 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-4">
+                <div class="size-8 text-primary"><svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6_330_gallery)"><path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill-rule="evenodd"></path></g><defs><clippath id="clip0_6_330_gallery"><rect fill="white" height="48" width="48"></rect></clippath></defs></svg></div>
+                <h2 class="text-charcoal dark:text-dark-text text-xl font-bold leading-tight tracking-tight">Culinary Crest</h2>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8">
+                <nav class="flex items-center gap-9">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link group relative" href="#">Services <span class="material-symbols-outlined text-sm align-middle">expand_more</span>
+                        <div class="absolute hidden group-hover:block bg-card-light dark:bg-card-dark shadow-xl rounded-lg mt-2 py-2 w-48 z-20 border border-subtle-gray dark:border-dark-border">
+                            <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="services-wedding.html">Weddings</a>
+                            <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="services-corporate.html">Corporate</a>
+                            <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="#">Private Events</a>
+                        </div>
+                    </a>
+                    <a class="nav-link" href="our-process.html">Process</a>
+                    <a class="nav-link" href="menu-builder.html">Menu Builder</a>
+                    <a class="nav-link font-bold text-primary" href="gallery.html">Gallery</a>
+                    <a class="nav-link" href="venues.html">Venues</a>
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </nav>
+                <a href="contact.html" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity">
+                    <span class="truncate">Get a Quote</span>
+                </a>
+            </div>
+            <div class="md:hidden">
+                <label for="mobile-menu" class="p-2 cursor-pointer">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <input type="checkbox" id="mobile-menu" class="hidden">
+    <div class="mobile-nav-content hidden md:hidden flex-col absolute top-[65px] left-0 w-full bg-card-light dark:bg-card-dark shadow-xl z-40 border-b border-subtle-gray dark:border-dark-border">
+        <a class="block px-6 py-3 nav-link" href="index.html">Home</a>
+        <a class="block px-6 py-3 nav-link" href="services-wedding.html">Weddings</a>
+        <a class="block px-6 py-3 nav-link" href="services-corporate.html">Corporate Events</a>
+        <a class="block px-6 py-3 nav-link" href="our-process.html">Process</a>
+        <a class="block px-6 py-3 nav-link" href="menu-builder.html">Menu Builder</a>
+        <a class="block px-6 py-3 nav-link font-bold text-primary" href="gallery.html">Gallery</a>
+        <a class="block px-6 py-3 nav-link" href="venues.html">Venues</a>
+        <a class="block px-6 py-3 nav-link" href="contact.html">Contact Us</a>
+        <a href="contact.html" class="mx-6 my-4 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity">
+            <span class="truncate">Get a Quote</span>
+        </a>
+    </div>
+
+    <main class="flex-1">
+        <div class="px-4 sm:px-6 lg:px-8 py-16 sm:py-24 max-w-7xl mx-auto">
+            <div class="flex flex-col gap-3 text-center mb-16">
+                <h1 class="text-charcoal dark:text-dark-text text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">A Visual Feast of Our Craft</h1>
+                <p class="text-charcoal/80 dark:text-dark-subtle-text text-lg font-normal leading-normal max-w-2xl mx-auto">Explore the artistry and elegance of our past events, from plated perfection to grand venue setups.</p>
+            </div>
+
+            <div class="flex justify-center mb-8 gap-4 overflow-x-auto pb-4">
+                <button class="px-6 py-2 rounded-full text-sm font-semibold bg-primary text-white shadow-md transition hover:opacity-90 min-w-[100px]">All Events</button>
+                <button class="px-6 py-2 rounded-full text-sm font-medium bg-card-light dark:bg-card-dark text-charcoal dark:text-dark-text border border-subtle-gray dark:border-dark-border transition hover:bg-primary/10 min-w-[100px]">Weddings</button>
+                <button class="px-6 py-2 rounded-full text-sm font-medium bg-card-light dark:bg-card-dark text-charcoal dark:text-dark-text border border-subtle-gray dark:border-dark-border transition hover:bg-primary/10 min-w-[100px]">Corporate</button>
+                <button class="px-6 py-2 rounded-full text-sm font-medium bg-card-light dark:bg-card-dark text-charcoal dark:text-dark-text border border-subtle-gray dark:border-dark-border transition hover:bg-primary/10 min-w-[100px]">Food & Plating</button>
+                <button class="px-6 py-2 rounded-full text-sm font-medium bg-card-light dark:bg-card-dark text-charcoal dark:text-dark-text border border-subtle-gray dark:border-dark-border transition hover:bg-primary/10 min-w-[100px]">Venues</button>
+            </div>
+
+            <div class="columns-2 md:columns-3 lg:columns-4 gap-4 [&>div:not(:first-child)]:mt-4">
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJOR0pdYc5f4kwwH22Y061cP4CxSS8ba9ZekvzRYYDcY4OrKvh1mSyjcIG6rDT6eLNeHYVAvvLVVhcwofvq5ep96_2dJnL71QQaLVlXthVVwB79MO3VSOkfHCmvb3bJy4U1qbmr7zMEtGP7gI8ofzxz6YXSzQtUbhIW4fYMMlrvYcNlIOEpr-XHYTMgSbxzyD1rdbmAFcXZvLrRCH8g39SYeoHXfpLACCrKbLlKx52OLkf_scqFuZwgXdf9uze6HgSsa3WdL3GMdU" alt="Gourmet Plating">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8lGxHG_K6emcYi_KP2TVxQwZMOciVUYHCnlWL0R16hdh_gMAJQdhUEswF6-KgUFvNv2fIqUYO68pMa_K4KHTe7ZakfzOdKx-7U95l0lGG56E7ICIcsk7EVXLcclrlsm-I2Pe81hAcT5CGyXRj9UjI0I4vxIE3HWHdtvARcI-e5y5lzZP6ORszRsyAa7FLoAbgHJXzhqCHdkW4VYz_CKWC5F04X2mDl3xLlgWk3DCnOzoQT1evheIary-0VftndGHg61z9o7kczQg" alt="Grand Gala Venue">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3-qbrJXT4b0QgwO6JS7l04jhwNIc6t3UcHQnPV3Kn24keGMqGX791fU59x1bUPcWXexitHPdPClsxUxA4uEhll7VNEumZsk3TsrGQ3iUxZxTZcRvqrZvGZt7YP8nBXN2JpVZeVEV3uSOh0rlLz7IcL2jIT53miqVhoZBmw-hGEPIC_xQUrO9CoCzZ2OLjyMLf8kIzPAI66jHcmG3uu7x7ghQBIN4ZYHKlvB_YKnEPxyGkKwFU8FQP_0QcaJ2DKovo3Bavgtcz4W4" alt="Chef plating dessert">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuABl1X-Ear3zigAwVwNWZtUwe8Alc-aMnDBWlC9_jkSRo4XxWOdaa6oiHnZ20PA1nO3mMSfDb3q83oKWEVlQ1Wy5Nl4GZpidXf-k0FCHHaQ_10Adba4dKjxj5wr3YYDJIY-S2TuEFoWO9VMoG1bQv5Oq4gt9iHg1YdULBuEjPqdXXxGdL0edBO0a5wqdAaR077TfwNvDX-QOmjgo7pR9XhFGpIZI_uRNcBFq15Gk-LUL6bDny-rulaSQYOtiVich8rVgBV3IeTiLfY" alt="Dessert Plating">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIIwhXp4nyj5pA_CSqZ9x1gMVqqmB7p_0Y3kWHbliaBcGmrP8JnEY6E7NyHXwD9t-rYaYTYl2lTfGm39lJ4zvFujNoXHVtBypJubmsaoFF_feTWD7ketgypW2Cf7c8TWSSZKsFIiWxkaHz5HbPvcJWA1d824UDfoIzzGDLUJ5f7VpzPY4pSCRuTM-HtQTyircHnhkE1W0ijo2iRXZpA2gP0LmURmyHKHrHgvgsTXOXGFQ1TbWFsO6VSlsXq-6z7WQKPKWNWQ48DAA" alt="Charcuterie Board">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVWHe1yJQ0PMp5jRsz-D82I8Yp1hJIFDkTT-Y3Qpr3p0-4AqAkAMXUbrRF8lj0Vi28ZXUzRFGbwe_2VjvNEST6wURWRwFp5G0ENyIejbZxc3IqgncuEKSMmq7DgJpuRygIYTeF3Fu0sVkGgCvCc0MNYUkcjCHRdNzTdaAxuBiAzASOBjcvbZRq21piGrc2uxFjBq-4NjFcBQKM4ySOKm8wyn9V6q6F6JjTCKYFkWqpnieetbD66U72wTT0D8wpLLARFTWP1cqKB80" alt="Table Setting">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX5F7L1PJhaDDMlB2fEF1qotwV15cYoLzZNsXUFZp9ZZEwhtmlZjrNSsWh6lYr_-Pt06YzC1OieiaPuDWBbym3CJ8Si_5yyIQp9TH-lrWxTB2Qq6lnQVRogAPNCrlLtLQsY0576bT_Nchri9h6GtvcORnw8hCrBHXcdcXfVswWZf37aSa3Gwl3hhebEHan0w5zVlJZ8xuwIu0Mi8h-Eds_P0L3fG8mJqzwkjyrETcvaz50C6NHV2S6l5NdzJiEfSMgLqCJJrVuimg" alt="Couple Toasting">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9-OvQ-CWqmobXWgRofaD7kOHWXmWc-82Flgw6lKkkg0UPpMDwREq8yJ_66hWtqd7sTJeRkJH0ly7Xg8smqw2ZUweo59TTVrVt-AXEaQkxK01rwwgm18RfTXsgdvJ0lJhzR6m3ie8KPtwMlTrQeV_GuDMDxu7XrtCvDR-ZjJ3MAgvlmjCUb5_Xcu0xK6zaDAoNNeTT-BdJuVhry3wKuasZYd2dMYkdVfQMQgP5yfgxFS_0XkVrgr7GjdL8b1JeJeR4fOOnFXqryU8" alt="Wedding Cake">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJAtwNVzUn-YkE8mjS3xOSnzrvgN_ii9zuGGccrYOskgc-S_ET_n1B1WAdeDgPUmwnHq0hJW5Cu07y24f8u8vHaCweT1skQ7Fy8YLY9XEHWHn05J7LPOuRr25wGIvFHNGIja2CAM7N9x3Th__uvhVRgNsinlYM93LcRkeO-lY_noblu0TeFVcJhihTtUiiTvgmXPF5X4ts1nbgQvdJ1SUwkIhVbbJSzR8qqb6vRRabSIDGKpIoaixO7ukmeID3_JCPxNhCLudAy-g" alt="Close-up Canapé">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDr7q8kAc5l7G4DLslE_yRqrB2-_fZIhJS0z7lU2m9UZ0W6h5fug7XYt-KuRWJm5TdiUN_WbRj3cLo4_u37POZgrlDsTYsTY_6qB4tEFB_Id0Le9MfOyUXq5usJ6IxleuM8QfVC7Mlyu9QTbSa4WqCtkrcD6rVFm95Ckj0NU2u7sdNQbI7DmO44fYo4yPBeb2jeUxessFXFy3DISYzAX2t9QvnwrEUn9z-l7OJ10jD91DQhDIWXMrmNgFSwmBr54I-z4H8NMM5hPLI" alt="Outdoor Venue">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhCE1n8k0VZGkcVYqLGHOWPA9TY2SDv835WlIrI_rh0R3dxTucDp5UzrpfZfI9jvec23rxW37rOODYmLtNZ3FaA0LGNkXwUnZZtGs4nfHWBgMvnxYb190FWoCVye0R1mNnCfp0SqpmC8LFLfXCfeTHCae170DlkTWaI-OiTeoMGZjGAX_aWH3LsjHoigeQxKVkKaZ9wbrwZYpYRC1KrZAWFrxMwpqQZKzeuFalVBkK54o1BhTTRq6z4Rar2dinQHQy54iiRldIJmY" alt="Chef Preparing">
+                </div>
+                <div class="break-inside-avoid">
+                    <img class="w-full rounded-lg shadow-lg transition hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYY0DJjE1xS0jv68-cJsGKK3I0hjKHp0t9vyfYBVGhzSmmdR4JZBKVyVL56ptT1XRyvLU6f1mBsFdcl1NyOIxtmhKNuGIvAIaTSd8KNLWOUJWZwD6Je6OinEZEl74sMfq2_2u1wXMkmYMl68uWjhpHDUpgzFZ7iMNiXY8sHfknSoWR90T-bOyMMuGVGyJt9wt3gKKJuKygI1ah_clMfJpl-nA6QeuhVey5zIh6wvfCNbxEVWwcD4cpxmh9L419bYD1Qc94jXI6EIk" alt="Ballroom Interior">
+                </div>
+            </div>
+            
+            <div class="text-center mt-20 bg-subtle-gray/50 dark:bg-card-dark/50 p-8 rounded-xl">
+                <h3 class="text-charcoal dark:text-dark-text text-2xl font-bold mb-4">Inspired by Our Work?</h3>
+                <p class="text-charcoal/80 dark:text-dark-subtle-text text-lg mb-8">Let us capture the same excellence for your next event.</p>
+                <a href="contact.html" class="inline-flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-8 bg-primary text-white text-base font-bold hover:opacity-90 transition-opacity">
+                    <span class="truncate">Request a Quote</span>
+                </a>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-background-light dark:bg-background-dark border-t border-subtle-gray dark:border-dark-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col gap-8 py-10 text-center @container">
+                <div class="flex flex-col md:flex-row items-center justify-center gap-x-10 gap-y-4">
+                    <a class="text-charcoal/80 dark:text-dark-subtle-text hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal" href="#">Privacy Policy</a>
+                    <a class="text-charcoal/80 dark:text-dark-subtle-text hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal" href="#">Terms of Service</a>
+                    <a class="text-charcoal/80 dark:text-dark-subtle-text hover:text-primary dark:hover:text-primary text-sm font-normal leading-normal" href="contact.html">Contact Us</a>
+                </div>
+                <div class="flex justify-center gap-6"></div>
+                <p class="text-charcoal/70 dark:text-dark-subtle-text text-sm font-normal leading-normal">© 2024 Culinary Crest. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>

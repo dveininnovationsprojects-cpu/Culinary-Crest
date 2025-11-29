@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Partner Venues - Culinary Crest</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24 }
+        .nav-link { @apply text-charcoal dark:text-dark-subtle-text text-sm font-medium leading-normal transition-colors hover:text-primary dark:hover:text-primary; }
+        #mobile-menu { display: none; }
+        @media (max-width: 767px) {
+            #mobile-menu:checked ~ .mobile-nav-content {
+                display: flex;
+            }
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b48c2a", 
+                        "background-light": "#f9f9f9",
+                        "background-dark": "#1a1a1a",
+                        "charcoal": "#333333",
+                        "subtle-gray": "#eaeaea",
+                        "dark-text": "#f0f0f0",
+                        "dark-subtle-text": "#a0a0a0",
+                        "dark-border": "#444444",
+                        "card-light": "#ffffff",
+                        "card-dark": "#2a2a2a"
+                    },
+                    fontFamily: { "display": ["Manrope", "sans-serif"] },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+    <header class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm">
+        <div class="flex items-center justify-between whitespace-nowrap border-b border-solid border-subtle-gray dark:border-dark-border px-4 sm:px-6 lg:px-10 py-4 max-w-7xl mx-auto">
+            <div class="flex items-center gap-4">
+                <div class="size-8 text-primary"><svg fill="currentColor" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_6_330_venues)"><path clip-rule="evenodd" d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z" fill-rule="evenodd"></path></g><defs><clippath id="clip0_6_330_venues"><rect fill="white" height="48" width="48"></rect></clippath></defs></svg></div>
+                <h2 class="text-charcoal dark:text-dark-text text-xl font-bold leading-tight tracking-tight">Culinary Crest</h2>
+            </div>
+            <div class="hidden md:flex flex-1 justify-end gap-8">
+                <nav class="flex items-center gap-9">
+                    <a class="nav-link" href="index.html">Home</a>
+                    <a class="nav-link group relative" href="#">Services <span class="material-symbols-outlined text-sm align-middle">expand_more</span>
+                        <div class="absolute hidden group-hover:block bg-card-light dark:bg-card-dark shadow-xl rounded-lg mt-2 py-2 w-48 z-20 border border-subtle-gray dark:border-dark-border">
+                            <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="services-wedding.html">Weddings</a>
+                            <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="services-corporate.html">Corporate</a>
+                            <a class="block px-4 py-2 text-sm text-charcoal dark:text-dark-text hover:bg-subtle-gray dark:hover:bg-dark-border" href="#">Private Events</a>
+                        </div>
+                    </a>
+                    <a class="nav-link" href="our-process.html">Process</a>
+                    <a class="nav-link" href="menu-builder.html">Menu Builder</a>
+                    <a class="nav-link" href="gallery.html">Gallery</a>
+                    <a class="nav-link font-bold text-primary" href="venues.html">Venues</a>
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </nav>
+                <a href="contact.html" class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity">
+                    <span class="truncate">Get a Quote</span>
+                </a>
+            </div>
+            <div class="md:hidden">
+                <label for="mobile-menu" class="p-2 cursor-pointer">
+                    <span class="material-symbols-outlined text-3xl">menu</span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <input type="checkbox" id="mobile-menu" class="hidden">
+    <div class="mobile-nav-content hidden md:hidden flex-col absolute top-[65px] left-0 w-full bg-card-light dark:bg-card-dark shadow-xl z-40 border-b border-subtle-gray dark:border-dark-border">
+        <a class="block px-6 py-3 nav-link" href="index.html">Home</a>
+        <a class="block px-6 py-3 nav-link" href="services-wedding.html">Weddings</a>
+        <a class="block px-6 py-3 nav-link" href="services-corporate.html">Corporate Events</a>
+        <a class="block px-6 py-3 nav-link" href="our-process.html">Process</a>
+        <a class="block px-6 py-3 nav-link" href="menu-builder.html">Menu Builder</a>
+        <a class="block px-6 py-3 nav-link" href="gallery.html">Gallery</a>
+        <a class="block px-6 py-3 nav-link font-bold text-primary" href="venues.html">Venues</a>
+        <a class="block px-6 py-3 nav-link" href="contact.html">Contact Us</a>
+        <a href="contact.html" class="mx-6 my-4 flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-opacity">
+            <span class="truncate">Get a Quote</span>
+        </a>
+    </div>
+    
+    <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <div class="flex flex-wrap justify-between gap-3 p-4 mb-8">
+            <div class="flex min-w-72 flex-col gap-3">
+                <h1 class="text-charcoal dark:text-dark-text text-4xl font-black leading-tight tracking-[-0.033em]">Our Premier Partner Venues</h1>
+                <p class="text-charcoal/80 dark:text-dark-subtle-text text-base font-normal leading-normal">Discover the perfect setting for your unforgettable event. Catering exclusive to these locations.</p>
+            </div>
+        </div>
+        <div class="flex flex-col lg:flex-row gap-12">
+            <aside class="w-full lg:w-1/4 lg:sticky top-28 h-fit">
+                <div class="flex flex-col gap-6 p-4 border rounded-xl border-subtle-gray dark:border-dark-border bg-card-light dark:bg-card-dark shadow-lg">
+                    <div class="py-1">
+                        <label class="flex flex-col min-w-40 h-12 w-full">
+                            <div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+                                <div class="text-charcoal/60 dark:text-dark-subtle-text flex border-none bg-subtle-gray dark:bg-dark-border items-center justify-center pl-4 rounded-l-lg border-r-0">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-charcoal dark:text-dark-text focus:outline-0 focus:ring-2 focus:ring-primary/50 border-none bg-subtle-gray dark:bg-dark-border h-full placeholder:text-charcoal/50 dark:placeholder:text-dark-subtle-text px-4 pl-2 text-base font-normal leading-normal" placeholder="Search by keyword" value=""/>
+                            </div>
+                        </label>
+                    </div>
+                    <div class="flex flex-col">
+                        <details class="flex flex-col border-t border-t-subtle-gray dark:border-t-dark-border py-2 group" open="">
+                            <summary class="flex cursor-pointer items-center justify-between gap-6 py-2"><p class="text-charcoal dark:text-dark-text text-sm font-medium leading-normal">Location</p><div class="text-charcoal dark:text-dark-text group-open:rotate-180 transition-transform"><span class="material-symbols-outlined">expand_more</span></div></summary>
+                            <div class="flex flex-col gap-2 pt-2 pb-2">
+                                <label class="flex items-center gap-2 text-charcoal/80 dark:text-dark-subtle-text"><input class="form-checkbox rounded border-subtle-gray text-primary focus:ring-primary/50 dark:bg-card-dark dark:border-dark-border" type="checkbox"/> <span class="text-sm">Downtown Chicago</span></label>
+                                <label class="flex items-center gap-2 text-charcoal/80 dark:text-dark-subtle-text"><input class="form-checkbox rounded border-subtle-gray text-primary focus:ring-primary/50 dark:bg-card-dark dark:border-dark-border" type="checkbox"/> <span class="text-sm">River North</span></label>
+                            </div>
+                        </details>
+                        <details class="flex flex-col border-t border-t-subtle-gray dark:border-t-dark-border py-2 group">
+                            <summary class="flex cursor-pointer items-center justify-between gap-6 py-2"><p class="text-charcoal dark:text-dark-text text-sm font-medium leading-normal">Venue Type</p><div class="text-charcoal dark:text-dark-text group-open:rotate-180 transition-transform"><span class="material-symbols-outlined">expand_more</span></div></summary>
+                            <div class="flex flex-col gap-2 pt-2 pb-2">
+                                <label class="flex items-center gap-2 text-charcoal/80 dark:text-dark-subtle-text"><input class="form-checkbox rounded border-subtle-gray text-primary focus:ring-primary/50 dark:bg-card-dark dark:border-dark-border" type="checkbox"/> <span class="text-sm">Ballroom</span></label>
+                                <label class="flex items-center gap-2 text-charcoal/80 dark:text-dark-subtle-text"><input class="form-checkbox rounded border-subtle-gray text-primary focus:ring-primary/50 dark:bg-card-dark dark:border-dark-border" type="checkbox"/> <span class="text-sm">Loft</span></label>
+                            </div>
+                        </details>
+                        <div class="border-t border-t-subtle-gray dark:border-t-dark-border py-4">
+                            <p class="text-charcoal dark:text-dark-text text-sm font-medium leading-normal mb-2">Guest Capacity (Up to 500+)</p>
+                            <div class="flex h-[38px] w-full pt-1.5">
+                                <div class="relative w-full">
+                                    <input class="w-full h-1 bg-subtle-gray dark:bg-dark-border rounded-lg appearance-none cursor-pointer range-sm accent-primary" max="500" min="50" type="range" value="250"/>
+                                    <div class="flex justify-between text-xs text-charcoal/60 dark:text-dark-subtle-text px-1"><span>50</span><span>500+</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2 pt-4 border-t border-t-subtle-gray dark:border-t-dark-border">
+                        <button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold tracking-[0.015em] hover:opacity-90 transition-colors">
+                            <span class="truncate">Apply Filters</span>
+                        </button>
+                        <a href="contact.html" class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-transparent text-charcoal/60 dark:text-dark-subtle-text text-sm font-medium hover:bg-subtle-gray/70 dark:hover:bg-dark-border/70 transition-colors border border-transparent hover:border-primary/50">
+                            <span class="truncate">Clear All & Request Consultation</span>
+                        </a>
+                    </div>
+                </div>
+            </aside>
+            <div class="w-full lg:w-3/4">
+                <div class="flex flex-wrap items-center justify-between mb-6 gap-4">
+                    <p class="text-charcoal/60 dark:text-dark-subtle-text text-sm">Showing 4 of 42 results</p>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2 text-sm">
+                            <label class="text-charcoal dark:text-dark-text" for="sort">Sort by:</label>
+                            <select class="form-select bg-card-light dark:bg-dark-border border-subtle-gray dark:border-dark-border rounded-lg text-sm focus:ring-primary/50 focus:border-primary/50 text-charcoal dark:text-dark-text" id="sort"><option>Popularity</option><option>Name (A-Z)</option><option>Capacity (Low-High)</option></select>
+                        </div>
+                        <div class="flex items-center gap-1 p-1 bg-subtle-gray dark:bg-dark-border/50 rounded-lg">
+                            <button class="p-2 rounded-md bg-card-light dark:bg-card-dark text-primary shadow-md"><span class="material-symbols-outlined text-base">grid_view</span></button>
+                            <button class="p-2 rounded-md text-charcoal/60 dark:text-dark-subtle-text hover:bg-card-light/70 dark:hover:bg-card-dark/70"><span class="material-symbols-outlined text-base">view_list</span></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-xl border border-subtle-gray dark:border-dark-border group">
+                        <div class="relative overflow-hidden"><img class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYY0DJjE1xS0jv68-cJsGKK3I0hjKHp0t9vyfYBVGhzSmmdR4JZBKVyVL56ptT1XRyvLU6f1mBsFdcl1NyOIxtmhKNuGIvAIaTSd8KNLWOUJWZwD6Je6OinEZEl74sMfq2_2u1wXMkmYMl68uWjhpHDUpgzFZ7iMNiXY8sHfknSoWR90T-bOyMMuGVGyJt9wt3gKKJuKygI1ah_clMfJpl-nA6QeuhVey5zIh6wvfCNbxEVWwcD4cpxmh9L419bYD1Qc94jXI6EIk" alt="Elegant ballroom"></div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-primary">The Grand Ballroom</h3>
+                            <p class="text-sm text-charcoal/60 dark:text-dark-subtle-text mb-4">Downtown, Chicago</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-charcoal/80 dark:text-dark-subtle-text border-t border-b border-subtle-gray dark:border-dark-border py-3 my-auto">
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">groups</span> 100-350</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">square_foot</span> 5000 sqft</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">deck</span> Terrace</span>
+                            </div>
+                            <button class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/10 text-primary font-bold text-sm hover:bg-primary/30 dark:hover:bg-primary/20 transition-colors">View Details</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-xl border border-subtle-gray dark:border-dark-border group">
+                        <div class="relative overflow-hidden"><img class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_OhPhrzOzQSLxWvZN3qqH3CB0h8Szst5Ps_GzkDKTHIe4kvqOR5uuzTHPWXIIXcDNSH87TqVuX7Qw96rNGixIRz3PymKbppjy1zVbHBGTBpFYo0_630Zp-NivXwfnFU1ew4zzXdSJXw8OzJAvFQmKfCPHan528-awUKKpFVjPstwqw9RroysPIusostZ8DBzZb_xL-_N3t7uAGJP_6gjsIysVAyqml12AyuNNOGZySyP_Nfz86keHecQxwEcfdz1WZYrTyQr-XS0" alt="Modern rooftop bar"></div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-primary">Skyline Loft</h3>
+                            <p class="text-sm text-charcoal/60 dark:text-dark-subtle-text mb-4">West Loop, Chicago</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-charcoal/80 dark:text-dark-subtle-text border-t border-b border-subtle-gray dark:border-dark-border py-3 my-auto">
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">groups</span> 50-150</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">square_foot</span> 3000 sqft</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">balcony</span> Rooftop</span>
+                            </div>
+                            <button class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/10 text-primary font-bold text-sm hover:bg-primary/30 dark:hover:bg-primary/20 transition-colors">View Details</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-xl border border-subtle-gray dark:border-dark-border group">
+                        <div class="relative overflow-hidden"><img class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5J5hnE_WcEE2l3naP4P1qaMHeNfq_8AR9ugKLyVvBK1YkIWPbhfpBDw8nKKvCknUL6UThPwedcj1V0NBy_BNRzbZN5OxQXbLJxTY53VvgAGccH8cmEPTTe-KlHJyAY7ICf1HlttcZ2-KRZbAa0GwuJIYhvV1ZIulKmAn7OWQiG9bIdHRIKizMKSXNlwlfQk-HI18Xtng-NtEM2pQ5rpg3ppOrGxXLt0GNvPejPDxstahH25GcgXMECwVQwqQlbOJpuMGOinH4ci0" alt="Lush garden wedding"></div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-primary">The Verdant Garden</h3>
+                            <p class="text-sm text-charcoal/60 dark:text-dark-subtle-text mb-4">Lincoln Park, Chicago</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-charcoal/80 dark:text-dark-subtle-text border-t border-b border-subtle-gray dark:border-dark-border py-3 my-auto">
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">groups</span> 75-200</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">square_foot</span> 8000 sqft</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">local_florist</span> Garden</span>
+                            </div>
+                            <button class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/10 text-primary font-bold text-sm hover:bg-primary/30 dark:hover:bg-primary/20 transition-colors">View Details</button>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-card-light dark:bg-card-dark rounded-xl overflow-hidden shadow-xl border border-subtle-gray dark:border-dark-border group">
+                        <div class="relative overflow-hidden"><img class="w-full h-52 object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEX0qSgQCAoR6N5dL1VvpfvuJbGMhmByD54MABm2f6QxR0yH46kSIvQMiQvNA1VqQjp78onSWi03F8MMyy-ZEXNNLIjJOHsUyXCPMu0Uj1_Xc0egSLu95UXT84ATAXrfD8HMvNOHZruMjFV_4e7hopD3XxXDqeXG07hf3WhHTgOXWKZ8xylu0mqzFZO85rXBPI3_vDomb6G6no2J-pgHMA_IG4sK0bSWqpjHMw_Oq6CKGDdNHCwPNrHnChg2IoIkAEgToGSOJPaQg" alt="Historic mansion"></div>
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="text-xl font-bold text-primary">The Astor Mansion</h3>
+                            <p class="text-sm text-charcoal/60 dark:text-dark-subtle-text mb-4">Gold Coast, Chicago</p>
+                            <div class="flex flex-wrap items-center gap-4 text-sm text-charcoal/80 dark:text-dark-subtle-text border-t border-b border-subtle-gray dark:border-dark-border py-3 my-auto">
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">groups</span> 150-400</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">square_foot</span> 12000 sqft</span>
+                                <span class="flex items-center gap-2"><span class="material-symbols-outlined text-lg">fireplace</span> Historic</span>
+                            </div>
+                            <button class="mt-4 flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 dark:bg-primary/10 text-primary font-bold text-sm hover:bg-primary/30 dark:hover:bg-primary/20 transition-colors">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center mt-12">
+                    <nav class="flex items-center gap-2">
+                        <a class="flex items-center justify-center size-9 rounded-lg text-charcoal/60 dark:text-dark-subtle-text hover:bg-subtle-gray/70 dark:hover:bg-dark-border/70 transition-colors" href="#"><span class="material-symbols-outlined text-xl">chevron_left</span></a>
+                        <a class="flex items-center justify-center size-9 rounded-lg text-white bg-primary text-sm font-bold shadow-md" href="#">1</a>
+                        <a class="flex items-center justify-center size-9 rounded-lg text-charcoal dark:text-dark-text hover:bg-subtle-gray/70 dark:hover:bg-dark-border/70 text-sm transition-colors" href="#">2</a>
+                        <a class="flex items-center justify-center size-9 rounded-lg text-charcoal dark:text-dark-text hover:bg-subtle-gray/70 dark:hover:bg-dark-border/70 text-sm transition-colors" href="#">3</a>
+                        <span class="text-charcoal/60 dark:text-dark-subtle-text">...</span>
+                        <a class="flex items-center justify-center size-9 rounded-lg text-charcoal dark:text-dark-text hover:bg-subtle-gray/70 dark:hover:bg-dark-border/70 text-sm transition-colors" href="#">8</a>
+                        <a class="flex items-center justify-center size-9 rounded-lg text-charcoal/60 dark:text-dark-subtle-text hover:bg-subtle-gray/70 dark:hover:bg-dark-border/70 transition-colors" href="#"><span class="material-symbols-outlined text-xl">chevron_right</span></a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>
